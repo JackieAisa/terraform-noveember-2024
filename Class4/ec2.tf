@@ -21,7 +21,7 @@ resource "aws_instance" "web" {
    ami = data.aws_ami.ubuntu.id
    instance_type = "t2.micro"
    # availability_zone = "us-east-2c"
-   subnet_id = aws_subnet.main2
+   subnet_id      = aws_subnet.main.id
    vpc_security_group_ids = [aws_security_group.allow_tls.id]
    user_data = file("apache.sh")
 
